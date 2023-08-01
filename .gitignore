@@ -8,3 +8,15 @@ ingenios/__pycache__/__init__.cpython-39.pyc
 ingenios/__pycache__/settings.cpython-39.pyc
 ingenios/__pycache__/urls.cpython-39.pyc
 webapp/migrations/__pycache__/__init__.cpython-39.pyc
+webapp/__pycache__/__init__.cpython-311.pyc
+webapp/__pycache__/admin.cpython-311.pyc
+webapp/__pycache__/apps.cpython-311.pyc
+webapp/__pycache__/models.cpython-311.pyc
+webapp/__pycache__/urls.cpython-311.pyc
+webapp/__pycache__/views.cpython-311.pyc
+ingenios/__pycache__/__init__.cpython-311.pyc
+ingenios/__pycache__/settings.cpython-311.pyc
+ingenios/__pycache__/urls.cpython-311.pyc
+ingenios/__pycache__/wsgi.cpython-311.pyc
+webapp/migrations/__pycache__/__init__.cpython-311.pyc
+.gitignore
