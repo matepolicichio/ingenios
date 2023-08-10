@@ -23,6 +23,7 @@
   --color-default-rgb: 33, 37, 41;
   --color-background: #ffffff;
   --color-background-rgb: 255, 255, 255;
+  /* --color-primary: #e84545; */
   --color-primary: #e84545;
   --color-primary-rgb: 232, 69, 69;
   --color-secondary: #32353a;
@@ -38,7 +39,7 @@
   --color-nav: #3a3939;
   --color-nav-hover: #e84545;
   --color-nav-dropdown: #3a3939;
-  --color-nav-dropdown-hover: #e84545;
+  --color-nav-dropdown-hover:#e84545;
   --color-nav-dropdown-background: #ffffff;
   --color-nav-mobile-background: #ffffff;
 }
@@ -47,6 +48,7 @@
 :root {
   scroll-behavior: smooth;
 }
+
 
 /*--------------------------------------------------------------
 # General
@@ -267,7 +269,7 @@ section {
   --color-background: #ffffff;
   --color-secondary: #444444;
   --color-nav: #444444;
-  --color-nav-hover: #d83535;
+  --color-nav-hover: #e84545;
 }
 
 /*--------------------------------------------------------------
@@ -946,8 +948,10 @@ opacity: 1;: The element is fully opaque.
 }
 
 .clients .client-logo img {
-  padding: 40px;
-  max-width: 100%;
+  padding: 20px;
+  height: 100px;
+  /* max-width: 100%; */
+  /* max-height: 50px; */
   transition: 0.3s;
   opacity: 0.5;
   filter: grayscale(100);
@@ -2021,7 +2025,7 @@ opacity: 1;: The element is fully opaque.
 
 .contact .php-email-form .error-message {
   display: none;
-  background: #df1529;
+  background: #e84545;
   color: #ffffff;
   text-align: left;
   padding: 15px;
