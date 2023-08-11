@@ -26,7 +26,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../../static/webapp/css/main.css" rel="stylesheet">
-
+  <link href="../../static/webapp/css/game.css" rel="stylesheet">
+  
   <!-- Favicons -->
   <link href="../../static/webapp/img/balloon.svg" rel="icon">
   <!-- <link href="../../static/webapp/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
@@ -102,32 +103,37 @@
 
       <div class="container-fluid" data-aos="fade-up">
 
-        <div class="row gy-4 justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center">
 
+          
+          <div class="row game-container align-items-center justify-content-center" id="game-container">
+            <!-- Cards will be added here dynamically -->
+          </div>
+
+          <!--  
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/python-logo-only.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div>
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/djangologo.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div>
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/htmlcsslogo.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div>
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/bootstraplogo.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div>
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/javascriptlogo.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div>
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="{% static 'webapp/img/clients/gologo.svg' %}" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
+          </div>End Client Item-->
         </div>
 
       </div>
@@ -517,6 +523,7 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'webapp/js/main.js' %}"></script>
+  <script src="{% static 'webapp/js/game.js' %}"></script>
 
 </body>
 {% endblock %}
