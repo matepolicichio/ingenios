@@ -109,9 +109,8 @@ function initialize(){
         logoContainer.appendChild(logo);
     });
 
-
     logoContainer.classList.remove('ocultar');
-    gameContainer.classList.add('ocultar')
+    gameContainer.classList.add('ocultar');
 }
 
 
@@ -123,7 +122,7 @@ const gameContainer = document.getElementById('game-container');
 
 const btnJugar = document.getElementById('btn-jugar');
 btnJugar.addEventListener('click', () => {
-    Jugar()
+    Jugar();
 });
 
 initialize();
