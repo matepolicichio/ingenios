@@ -27,7 +27,7 @@
   <!-- Template Main CSS File -->
   <link href="../../static/webapp/css/main.css" rel="stylesheet">
   <link href="../../static/webapp/css/game.css" rel="stylesheet">
-  
+
   <!-- Favicons -->
   <link href="../../static/webapp/img/balloon.svg" rel="icon">
   <!-- <link href="../../static/webapp/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
@@ -87,11 +87,13 @@
             <p data-aos="fade-up" data-aos-delay="200">La inteligencia es necesaria pero no es todo, necesitamos sentir
               lo que hacemos, y así movernos hacia donde queremos ir.</p>
           </div>
-          <div class="col-lg-5">
-            <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5 mt-3">
+            <a class="btn btn-danger btn-lg" href="{% url 'webapp:index' %}#clients" id="btn-jugar" data-aos="fade-up" data-aos-delay="200"role="button"><span>Juego de memoria </span><i class="bi bi-arrow-right"></i></a>
+   
+            <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
               <input type="text" class="form-control" placeholder="Ingresa tu nombre">
-              <input type="submit" class="btn btn-primary" value="Iniciar Chat">
-            </form>
+              <input type="submit" class="btn btn-primary" value="Jugar">
+            </form> -->
           </div>
         </div>
       </div>
@@ -103,39 +105,13 @@
 
       <div class="container-fluid" data-aos="fade-up">
 
-        <div class="row justify-content-center align-items-center">
-
-          
-          <div class="row game-container align-items-center justify-content-center" id="game-container">
-            <!-- Cards will be added here dynamically -->
-          </div>
-
-          <!--  
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/python-logo-only.svg' %}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/djangologo.svg' %}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/htmlcsslogo.svg' %}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/bootstraplogo.svg' %}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/javascriptlogo.svg' %}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="{% static 'webapp/img/clients/gologo.svg' %}" class="img-fluid" alt="">
-          </div>End Client Item-->
+        <div class="row logo-container align-items-center justify-content-center" id="logo-container">
+          <!-- logos will be added here dynamically -->
         </div>
 
+        <div class="row game-container align-items-center justify-content-center" id="game-container">
+          <!-- Cards will be added here dynamically -->
+        </div>
       </div>
 
     </section><!-- End Clients Section -->
@@ -232,7 +208,7 @@
                 <h4 class="title"><a href="{% url 'webapp:index' %}" class="stretched-link">Módulos de IA</a>
                 </h4>
                 <p class="description">Entrenamos modelos específicos de inteligencia artificial para potenciar tus
-                  aplicaciones, permitiéndote aprovechar las capacidades avanzadas de la tecnología de IA. 
+                  aplicaciones, permitiéndote aprovechar las capacidades avanzadas de la tecnología de IA.
                 </p>
               </div>
             </div>

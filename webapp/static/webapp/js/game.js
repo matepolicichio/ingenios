@@ -6,8 +6,6 @@ const images = [
     '../../static/webapp/img/game/image5.svg',
     '../../static/webapp/img/game/image6.svg',
 ];
-let flippedCards = [];
-let matchedPairs = 0;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -15,6 +13,22 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
+}
+
+function createLogo(imageUrl) {
+    const logoElement = document.createElement('div');
+    logoElement.classList.add('plogo', 'col-md-2', 'col-4');
+    
+    const logoInnerElement = document.createElement('div');
+    logoInnerElement.classList.add('plogo-inner');
+    
+    const imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
+    
+    logoInnerElement.appendChild(imgElement);
+    logoElement.appendChild(logoInnerElement);
+
+    return logoElement;
 }
 
 function createCard(imageUrl) {
@@ -44,8 +58,9 @@ function createCard(imageUrl) {
                     flippedCards = [];
                     if (matchedPairs === images.length) {
                         setTimeout(() => {
-                            alert('Congratulations! You won!');
+                            alert('Buen trabajo!!!');
                         }, 500); // Delay to allow last card to flip
+                        initialize();    
                     }
                 } else {
                     setTimeout(() => {
@@ -60,15 +75,55 @@ function createCard(imageUrl) {
     return cardElement;
 }
 
-function initializeGame() {
-    const gameContainer = document.getElementById('game-container');
-    const shuffledImages = shuffle([...images, ...images]);
-    
-    shuffledImages.forEach(imageUrl => {
-        const card = createCard(imageUrl);
-        gameContainer.appendChild(card);
-    });
+
+function removeAllChildElements(parentElement) {
+    while (parentElement.firstChild) {
+        parentElement.removeChild(parentElement.firstChild);
+    }
 }
 
-initializeGame();
 
+function Jugar() {
+
+        removeAllChildElements(logoContainer);
+        removeAllChildElements(gameContainer);
+        const gameShuffledImages = shuffle([...images, ...images]);
+        gameShuffledImages.forEach(imageUrl => {
+            const card = createCard(imageUrl);
+            gameContainer.appendChild(card);
+        });
+
+        logoContainer.classList.add('ocultar');
+        gameContainer.classList.remove('ocultar');
+}
+
+function initialize(){
+
+    matchedPairs = 0;
+    removeAllChildElements(logoContainer);
+    removeAllChildElements(gameContainer);
+
+    const logoShuffledImages = shuffle(images);
+    logoShuffledImages.forEach(imageUrl => {
+        const logo = createLogo(imageUrl);
+        logoContainer.appendChild(logo);
+    });
+
+
+    logoContainer.classList.remove('ocultar');
+    gameContainer.classList.add('ocultar')
+}
+
+
+let flippedCards = [];
+let matchedPairs;
+
+const logoContainer = document.getElementById('logo-container');
+const gameContainer = document.getElementById('game-container');
+
+const btnJugar = document.getElementById('btn-jugar');
+btnJugar.addEventListener('click', () => {
+    Jugar()
+});
+
+initialize();

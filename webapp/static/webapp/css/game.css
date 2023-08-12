@@ -1,6 +1,6 @@
 /* styles.css */
 
-.card {    
+.card {
     padding: 10px;
     border: none;
     align-items: center;
@@ -9,12 +9,35 @@
     transition: transform 0.5s;
 }
 
+.plogo {
+    padding: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+
+
 .card .card-inner {
     background-color: #f0f0f0;
     border-radius: 5%;
     padding: 10px;
     width: 100px;
-    height: 100px;    
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.plogo .plogo-inner {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +47,24 @@
 
 .card.flipped .card-inner {
     transform: rotateY(180deg);
+}
+
+.plogo img {
+    max-width: 100%;
+    max-height: 100%;
+
+    transition: 0.3s;
+    opacity: 0.5;
+    filter: grayscale(100);
+}
+
+.plogo img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+.ocultar {
+    display: none;
 }
 
 .card img {
