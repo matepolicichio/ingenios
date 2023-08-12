@@ -18,13 +18,13 @@ function shuffle(array) {
 function createLogo(imageUrl) {
     const logoElement = document.createElement('div');
     logoElement.classList.add('plogo', 'col-md-2', 'col-4');
-    
+
     const logoInnerElement = document.createElement('div');
     logoInnerElement.classList.add('plogo-inner');
-    
+
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
-    
+
     logoInnerElement.appendChild(imgElement);
     logoElement.appendChild(logoInnerElement);
 
@@ -34,25 +34,25 @@ function createLogo(imageUrl) {
 function createCard(imageUrl) {
     const cardElement = document.createElement('div');
     cardElement.classList.add('card', 'col-md-2', 'col-4');
-    
+
     const cardInnerElement = document.createElement('div');
     cardInnerElement.classList.add('card-inner');
-    
+
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
-    
+
     cardInnerElement.appendChild(imgElement);
     cardElement.appendChild(cardInnerElement);
-    
+
     cardElement.addEventListener('click', () => {
         if (flippedCards.length < 2 && !cardElement.classList.contains('flipped')) {
             cardElement.classList.add('flipped');
             flippedCards.push(cardElement);
-            
+
             if (flippedCards.length === 2) {
                 const card1 = flippedCards[0].querySelector('img').src;
                 const card2 = flippedCards[1].querySelector('img').src;
-                
+
                 if (card1 === card2) {
                     matchedPairs++;
                     flippedCards = [];
@@ -60,7 +60,7 @@ function createCard(imageUrl) {
                         setTimeout(() => {
                             alert('Buen trabajo!!!');
                         }, 500); // Delay to allow last card to flip
-                        initialize();    
+                        initialize();
                     }
                 } else {
                     setTimeout(() => {
@@ -71,7 +71,7 @@ function createCard(imageUrl) {
             }
         }
     });
-    
+
     return cardElement;
 }
 
@@ -85,21 +85,25 @@ function removeAllChildElements(parentElement) {
 
 function Jugar() {
 
-        removeAllChildElements(logoContainer);
-        removeAllChildElements(gameContainer);
-        const gameShuffledImages = shuffle([...images, ...images]);
-        gameShuffledImages.forEach(imageUrl => {
-            const card = createCard(imageUrl);
-            gameContainer.appendChild(card);
-        });
+    removeAllChildElements(logoContainer);
+    removeAllChildElements(gameContainer);
 
-        logoContainer.classList.add('ocultar');
-        gameContainer.classList.remove('ocultar');
+    const gameShuffledImages = shuffle([...images, ...images]);
+    gameShuffledImages.forEach(imageUrl => {
+        const card = createCard(imageUrl);
+        gameContainer.appendChild(card);
+    });
+
+    logoContainer.classList.add('ocultar');
+    gameContainer.classList.remove('ocultar');
 }
 
-function initialize(){
+function initialize() {
 
     matchedPairs = 0;
+
+    const logoContainer = document.getElementById('logo-container');
+    const gameContainer = document.getElementById('game-container');
     removeAllChildElements(logoContainer);
     removeAllChildElements(gameContainer);
 
@@ -120,9 +124,9 @@ let matchedPairs;
 const logoContainer = document.getElementById('logo-container');
 const gameContainer = document.getElementById('game-container');
 
-const btnJugar = document.getElementById('btn-jugar');
-btnJugar.addEventListener('click', () => {
-    Jugar();
-});
-
 initialize();
+
+// const btnJugar = document.getElementById('btn-jugar');
+// btnJugar.addEventListener('click', () => {
+//     Jugar();
+// });
