@@ -126,7 +126,7 @@ const gameContainer = document.getElementById('game-container');
 
 initialize();
 
-// const btnJugar = document.getElementById('btn-jugar');
-// btnJugar.addEventListener('click', () => {
-//     Jugar();
-// });
+const btnJugar = document.getElementById('btn-jugar');
+btnJugar.addEventListener('click', () => {
+    Jugar();
+});
