@@ -73,3 +73,15 @@
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
+
+
+.game-score {
+    background: gray;
+    color: white;
+}
+
+.game-score p {
+    /* height: 50px; */
+    margin-bottom: 0px;
+}
+

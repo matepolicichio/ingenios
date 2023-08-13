@@ -27,6 +27,7 @@
   <!-- Template Main CSS File -->
   <link href="../../static/webapp/css/main.css" rel="stylesheet">
   <link href="../../static/webapp/css/game.css" rel="stylesheet">
+  <link href="../../static/webapp/css/codex.css" rel="stylesheet">
 
   <!-- Favicons -->
   <link href="../../static/webapp/img/balloon.svg" rel="icon">
@@ -88,8 +89,9 @@
               lo que hacemos, y así movernos hacia donde queremos ir.</p>
           </div>
           <div class="col-lg-5 mt-3">
-            <a class="btn btn-danger btn-lg" href="{% url 'webapp:index' %}#clients" id="btn-jugar" data-aos="fade-up" data-aos-delay="200"role="button"><span>Juego de memoria </span><i class="bi bi-arrow-right"></i></a>
-   
+            <a class="btn btn-danger btn-lg" href="{% url 'webapp:index' %}#clients" id="btn-jugar" data-aos="fade-up"
+              data-aos-delay="200" role="button"><span>Juego de memoria </span><i class="bi bi-arrow-right"></i></a>
+
             <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
               <input type="text" class="form-control" placeholder="Ingresa tu nombre">
               <input type="submit" class="btn btn-primary" value="Jugar">
@@ -112,7 +114,30 @@
         <div class="row game-container align-items-center justify-content-center" id="game-container">
           <!-- Cards will be added here dynamically -->
         </div>
+
+        <div class="row game-score align-items-center justify-content-center" id="game-score">
+          <div class="col-8 align-items-center justify-content-start p-3">
+            <p id="timer" class="timer">Tiempo: 0 seconds</p>
+            <p id="rounds" class="rounds">Rondas: 0</p>
+          </div>
+          <div class="col-4 align-items-center justify-content-center">
+            <p id="score" class="score">Puntos: 0</p>
+          </div>
+        </div>
       </div>
+
+      <div class="row game-chat align-items-center justify-content-center" id="game-chat">
+        <div id="app">
+          <div id="chat_container"></div>
+
+          <form>
+            <textarea name="prompt" rows="1" cols="1" placeholder="Ver resultado ..."></textarea>
+            <button type="submit"><img src="{% static 'webapp/img/bot/send.svg' %}" alt="send" />
+          </form>
+        </div>
+      </div>
+
+
 
     </section><!-- End Clients Section -->
 
@@ -320,8 +345,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Contacto</h2>
         <p>"... a un paso de la <strong>Innovación.</strong>" Para contactarnos, completa el formulario a continuación y
-          descubre cómo
-          podemos ayudarte a alcanzar tus objetivos. </p>
+          descubre cómo podemos ayudarte a alcanzar tus objetivos. </p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -500,6 +524,7 @@
   <!-- Template Main JS File -->
   <script src="{% static 'webapp/js/main.js' %}"></script>
   <script src="{% static 'webapp/js/game.js' %}"></script>
+  <!-- <script type="module" src="{% static 'webapp/js/codex.js' %}"></script> -->
 
 </body>
 {% endblock %}
