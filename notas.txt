@@ -1,5 +1,3 @@
-Clients Section: Logos
--Python, OpenAI, Bootstrap, HTML CSS, JS, Django.
-
-About Section: Desarrollar 4 aspectos que nos diferencien de la competencia.
-Enfoque personalizado, excelencia en atencion, velocidad, Innovacion
+1. webapp: html tags
+2. members app
+3. blog app

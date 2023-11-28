@@ -1,0 +1,362 @@
+{% load static %}
+
+<main id="main">
+
+    <!-- Hero Section - Home Page -->
+    <section id="hero" class="hero">
+
+      <img src="{% static 'webapp/img/portada-drone.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100">Bienvenidos a InGenios</h2>
+            <p data-aos="fade-up" data-aos-delay="200">La inteligencia es necesaria pero no es todo, necesitamos sentir
+              lo que hacemos, y así movernos hacia donde queremos ir.</p>
+          </div>
+          <div class="col-lg-5 mt-3">
+            <a class="btn btn-danger btn-lg" href="{% url 'webapp:index' %}#clients" id="btn-jugar" data-aos="fade-up"
+              data-aos-delay="200" role="button"><span>Juego de memoria </span><i class="bi bi-arrow-right"></i></a>
+
+            <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
+              <input type="text" class="form-control" placeholder="Ingresa tu nombre">
+              <input type="submit" class="btn btn-primary" value="Jugar">
+            </form> -->
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End Hero Section -->
+
+    <!-- Clients Section - Home Page -->
+    <section id="clients" class="clients">
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row logo-container align-items-center justify-content-center" id="logo-container">
+          <!-- logos will be added here dynamically -->
+        </div>
+
+        <div class="row game-container align-items-center justify-content-center" id="game-container">
+          <!-- Cards will be added here dynamically -->
+        </div>
+
+        <div class="row game-score align-items-center justify-content-center" id="game-score">
+          <div class="col-8 align-items-center justify-content-start p-3">
+            <p id="timer" class="timer">Tiempo: 0 seconds</p>
+            <p id="rounds" class="rounds">Rondas: 0</p>
+          </div>
+          <div class="col-4 align-items-center justify-content-center">
+            <p id="score" class="score">Puntos: 0</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row game-chat align-items-center justify-content-center" id="game-chat">
+        <div id="app">
+          <div id="chat_container"></div>
+
+          <form>
+            <textarea name="prompt" rows="1" cols="1" placeholder="Ver resultado ..."></textarea>
+            <button type="submit"><img src="{% static 'webapp/img/bot/send.svg' %}" alt="send" />
+          </form>
+        </div>
+      </div>
+
+
+    </section><!-- End Clients Section -->
+
+    <!-- About Section - Home Page -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>Nosotros</h3>
+            <h2>Construyendo el futuro juntos.</h2>
+            <p>En InGenios, somos un equipo de profesionales apasionados con una combinación única de competencias en
+              ingeniería, sistemas, administración, neurociencia y psicología que nos permite abordar los proyectos de
+              una manera holística. </p>
+            <a href="#" class="read-more"><span>Leer más</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-search-heart"></i>
+                  <h3>Enfoque</h3>
+                  <p>Dedicándonos a entender las necesidades únicas de cada cliente y ofrecer soluciones a medida.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-stars"></i>
+                  <h3>Excelencia</h3>
+                  <p>Nuestro profesionalismo y atención al detalle nos diferencian en cada proyecto.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-cloud-sun"></i>
+                  <h3>Creatividad</h3>
+                  <p>Nos apasiona crear nuevas y sorprendentes formas de abordar cada proyecto.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-brightness-high"></i>
+                  <h3>Innovación</h3>
+                  <p>Buscamos romper barreras y explorar nuevos horizontes para mantenernos a la vanguardia tecnológica.
+                  </p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- Services Section - Home Page -->
+    <section id="services" class="services">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Proyectos</h2>
+        <p>"Son aquellos que nos motivan a seguir adelante", desde aplicaciones simples en pleno funcionamiento hasta el
+          desarrollo de prototipos prometedores con la incorporación de modelos de Ai.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-app-indicator"></i></div>
+              <div>
+                <h4 class="title"><a href="{% url 'webapp:index' %}" class="stretched-link">Web apps</a></h4>
+                <p class="description">Desarrollamos aplicaciones web dinámicas y funcionales basadas en Django, una
+                  plataforma de desarrollo web de alto rendimiento.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-palette"></i></div>
+              <div>
+                <h4 class="title"><a href="{% url 'webapp:index' %}" class="stretched-link">Módulos de IA</a>
+                </h4>
+                <p class="description">Entrenamos modelos específicos de inteligencia artificial para potenciar tus
+                  aplicaciones, permitiéndote aprovechar las capacidades avanzadas de la tecnología de IA.
+                </p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-dice-6"></i></div>
+              <div>
+                <h4 class="title"><a href="{% url 'webapp:index' %}" class="stretched-link">Ai apps</a>
+                </h4>
+                <p class="description">Creamos aplicaciones innovadoras y potentes basadas en inteligencia artificial,
+                  para mejorar la interacción y experiencia del usuario.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-hearts"></i></div>
+              <div>
+                <h4 class="title"><a href="{% url 'webapp:index' %}" class="stretched-link">Juegos
+                    Cognitivos</a></h4>
+                <p class="description">Diseñados para estimular y mejorar tus habilidades cognitivas a través de
+                  desafíos interactivos y entretenidos.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Services Section -->
+
+    <!-- Team Section - Home Page -->
+    <section id="team" class="team">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Equipo</h2>
+        <p>Trabajamos de manera colaborativa, con el objetivo de aprovechar al máximo nuestras
+          diversas habilidades y experiencias. Nos gusta aprender cosas nuevas todos los días. </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{% static 'webapp/img/team/mateo.jpeg' %}" class="img-fluid" alt="">
+              <div class="social">
+                <!-- <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a> -->
+                <a href="https://www.linkedin.com/in/mateo-policichio/" target="_blank"><i
+                    class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Mateo Policichio</h4>
+              <span>Desarrollo e Innovación</span>
+              <p>Estudiante de Sistemas y Administración de Empresas en la Universidad de Palermo (UP)
+              </p>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="{% static 'webapp/img/team/gian.jfif' %}" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://www.linkedin.com/in/gian-marco-policichio/" target="_blank"><i
+                    class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Gian Policichio</h4>
+              <span>Creatividad y Neurociencia</span>
+              <p>Estudiante de Ingeniería Informática (UBA) y Psicología (UB)</p>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+              <img src="{% static 'webapp/img/team/martin.png' %}" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://www.linkedin.com/in/martinpolicichio/" target="_blank"><i
+                    class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Martin Policichio</h4>
+              <span>Desarrollo Tecnológico</span>
+              <p>Ingeniero Electrónico (UBA / ITBA)</p>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Team Section -->
+
+    <!-- Contact Section - Home Page -->
+    <section id="contact" class="contact">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p>"... a un paso de la <strong>Innovación.</strong>" Para contactarnos, completa el formulario a continuación y
+          descubre cómo podemos ayudarte a alcanzar tus objetivos. </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Ubicacion</h3>
+                  <p>Buenos Aires,</p>
+                  <p>Argentina</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Contactanos</h3>
+                  <p>+54 911 5756-6163</p>
+                  <p>+54 911 3333-2216</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="400">
+                  <i class="bi bi-power"></i>
+                  <h3>Accionar</h3>
+                  <p>...</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="500">
+                  <i class="bi bi-clock"></i>
+                  <h3>Horarios</h3>
+                  <p>ALL</p>
+                  <p>...</p>
+                  <p> </p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="Nombre" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="Titulo" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="Mensaje" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Cargando</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Tu mensaje ha sido enviado. Gracias!</div>
+
+                  <button type="submit">Enviar Mensaje</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+  </main>

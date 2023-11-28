@@ -33,10 +33,10 @@ function createLogo(imageUrl) {
 
 function createCard(imageUrl) {
     const cardElement = document.createElement('div');
-    cardElement.classList.add('card', 'col-md-2', 'col-4');
+    cardElement.classList.add('card-game', 'col-md-2', 'col-4');
 
     const cardInnerElement = document.createElement('div');
-    cardInnerElement.classList.add('card-inner');
+    cardInnerElement.classList.add('card-game-inner');
 
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;

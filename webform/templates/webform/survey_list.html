@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey List</title>
+</head>
+<body>
+    <h1>Available Surveys:</h1>
+    <ul>
+        {% for survey in surveys %}
+            <li><a href="{% url 'webform:take_survey' survey.id %}">{{ survey.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

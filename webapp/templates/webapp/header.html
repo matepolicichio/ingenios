@@ -1,0 +1,82 @@
+{% load static %}
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+        <a href="{% url 'webapp:index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <h1>InGenios</h1>
+            <img src="{% static 'webapp/img/balloon.svg' %}" alt="balloon">
+        </a>
+
+        <!-- Nav Menu -->
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="{% url 'webapp:index' %}#hero">Inicio</a></li>
+                <li><a href="{% url 'webapp:index' %}#about">Nosotros</a></li>
+                <li><a href="{% url 'webapp:index' %}#services">Proyectos</a></li>
+                <li><a href="{% url 'webapp:index' %}#team">Equipo</a></li>
+                <li><a href="{% url 'webapp:index' %}#contact">Contacto</a></li>
+
+                {% if user.is_authenticated %}
+                <li class="dropdown has-dropdown">
+                    <a href="{% url 'blog:home' %}"><span>Ideas</span> <i class="bi bi-chevron-down"></i></a>
+
+                    <ul class="dd-box-shadow">
+                        <li><a class="dropdown-item" href="{% url 'blog:add_post' %}">Nueva Idea</a></li>
+                    </ul>
+
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:home' %}">Ideas</a>
+                </li>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+
+                <li class="dropdown has-dropdown">
+                    <a href="#"><span>{{ user.first_name }} {{ user.last_name }}</span> <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="dd-box-shadow">
+                        <li><a class="dropdown-item" href="{% url 'members:edit_setting'  %}">Configuración de Cuenta</a></li>
+                        {% if user.profile.id %}
+                        <li><a class="dropdown-item" href="{% url 'members:edit_profile' user.profile.id %}">Editar Perfil de Usuario</a></li>
+                        <li><a class="dropdown-item" href="{% url 'members:show_profile' user.profile.id %}">Ver Perfil de Usuario</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'members:create_profile' %}">Crear Perfil</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+                {% else %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'members:register'%}">Registrarse</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+
+                {% endif %}
+
+
+
+
+
+
+            </ul>
+
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav><!-- End Nav Menu -->
+
+        <a class="btn-getstarted" href="{% url 'webapp:index' %}#about">Comenzar</a>
+
+    </div>
+</header><!-- End Header -->
